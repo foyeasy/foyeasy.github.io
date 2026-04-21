@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mohammad Ramjan Hossain - Portfolio</title>
+<link rel="icon" href="Assets/Logo/fyz_profile.jpg" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;1,6..12,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* Profile image slide animation */
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .photo-frame {
+    animation: slideInRight 0.8s ease forwards;
+    opacity: 0;
+  }
+  
+/* Featured Carousel Styles */
+.featured-section {
+  padding: 0rem 0;
+  background: var(--bg-warm);
+  padding-bottom: 2.5rem; 
+}
+
+.featured-section + section {
+  padding-top: 1.5rem;
+}
+
+.featured-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 900px; /* Adjust width as needed */
+  margin: 0 auto;
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+/* KEY FIX: Explicit height (not auto) because children are absolute */
+.featured-slides {
+  position: relative;
+  width: 100%;
+  height: 400px; /* Fixed height - adjust to control carousel size */
+  overflow: hidden;
+  background: var(--bg-card-alt); /* Letterbox background for mismatched images */
+}
+
+.featured-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  display: flex; /* Center image with flex */
+  align-items: center;
+  justify-content: center;
+background: var(--bg);}
+
+.featured-slide.active {
+  opacity: 1;
+}
+
+/* Show full image, no cropping */
+.featured-slide img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain; /* Critical: no cropping */
+  object-position: center;
+}
+
+/* Arrow styles - unchanged but ensure z-index */
+.featured-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(46, 125, 82, 0.6);
+  color: white;
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.featured-arrow:hover {
+  background: rgba(46, 125, 82, 1);
+  transform: translateY(-50%) scale(1.15);
+}
+
+.featured-arrow.prev { left: 15px; }
+.featured-arrow.next { right: 15px; }
+
+/* Dots - unchanged */
+.featured-dots {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.featured-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid white;
+}
+
+.featured-dot.active {
+  background: white;
+  width: 28px;
+  border-radius: 5px;
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <div class="nav-brand-text"><span>M. R.</span> Hossain</div>
+    </a>
+    <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="background.html">Background</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<div class="hero" id="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <div class="hero-affiliation">
+          <img src="Assets/Logo/SUST logo.png" alt="SUST">
+          <span>Shahjalal University of Science and Technology</span>
+        </div>
+        <h1 class="hero-name">MOHAMMAD RAMJAN<br><em>HOSSAIN</em></h1>
+        <div class="hero-title">Graduate Mechanical Engineer | Prospective Masters/PhD Student</div>
+        <p class="hero-summary">Exploring thermal management in advanced machining, additive manufacturing, and materials characterization. Combining multi-physics simulation, embedded systems, and machine learning to bridge design, fabrication, and in-situ process control.</p>
+        <div class="hero-metrics">
+          <div class="metric"><div class="metric-value">3</div><div class="metric-label">Publications</div></div>
+          <div class="metric"><div class="metric-value">1</div><div class="metric-label">Conference Presentation</div></div>
+          <div class="metric"><div class="metric-value">3.45</div><div class="metric-label">CGPA (out of 4.00)</div></div>
+        </div>      
+      </div>
+      <div class="hero-photo">
+        <div class="photo-frame">
+          <img src="Assets/fyz-min.png" alt="Mohammad Ramjan Hossain">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ FEATURED CAROUSEL ═══ -->
+<section class="featured-section">
+  <div class="container">
+    <div class="sec-header-first">
+      <div class="sec-label">Featured Work</div>
+      <div class="sec-divider"></div>
+      <!-- <h2>Research & Projects Showcase</h2> -->
+    </div>
+    
+    <div class="featured-carousel">
+      <div class="featured-slides">
+        <div class="featured-slide active">
+          <img src="Assets/Carousel/UGT01.png" alt="UGT01">
+        </div>
+        <div class="featured-slide">
+          <img src="Assets/Carousel/UGT02.png" alt="UGT02">
+        </div>
+        <div class="featured-slide">
+          <img src="Assets/Carousel/UGT03.png" alt="UGT03">
+        </div>
+        <div class="featured-slide">
+          <img src="Assets/Carousel/RA01.png" alt="RA01">
+        </div>
+        <div class="featured-slide">
+          <img src="Assets/Carousel/RA02.png" alt="RA02">
+        </div>
+        <div class="featured-slide">
+          <img src="Assets/Carousel/RA03.png" alt="RA03">
+        </div>
+        <div class="featured-slide">
+          <img src="Assets/Carousel/RA04.png" alt="RA04">
+        </div>
+      </div>
+      
+      <!-- Navigation Arrows -->
+      <button class="featured-arrow prev" onclick="changeFeaturedSlide(-1)">❮</button>
+      <button class="featured-arrow next" onclick="changeFeaturedSlide(1)">❯</button>
+      
+      <!-- Dots -->
+      <div class="featured-dots">
+        <span class="featured-dot active" onclick="goToFeaturedSlide(0)"></span>
+        <span class="featured-dot" onclick="goToFeaturedSlide(1)"></span>
+        <span class="featured-dot" onclick="goToFeaturedSlide(2)"></span>
+        <span class="featured-dot" onclick="goToFeaturedSlide(3)"></span>
+        <span class="featured-dot" onclick="goToFeaturedSlide(4)"></span>
+        <span class="featured-dot" onclick="goToFeaturedSlide(5)"></span>
+        <span class="featured-dot" onclick="goToFeaturedSlide(6)"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LATEST PUBLICATION -->
+<section class="sec-alt">
+  <div class="container">
+    <div class="sec-header anim">
+      <div class="sec-label">Latest Publication</div>
+      <div class="sec-divider"></div>
+    </div>
+    <div class="pub-card anim">
+        <div class="pub-logo">
+          <svg viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg"><rect width="56" height="56" rx="8" fill="#fff"/><text x="28" y="24" text-anchor="middle" font-family="Arial,sans-serif" font-weight="bold" font-size="11" fill="#333">JHMTR</text><rect x="8" y="30" width="40" height="2.5" rx="1" fill="#4caf50"/><text x="28" y="44" text-anchor="middle" font-family="Arial,sans-serif" font-size="6.5" fill="#aaa">Open Access</text></svg>
+        </div>
+        <div>
+          <div class="pub-badge published">Jan, 2026</div>
+          <div class="pub-title">Enhancing Carbide Cutting Tool Thermal Management through Embedded Copper Core: A Numerical Approach</div>
+          <div class="pub-authors">Islam, M. S., <strong>Hossain, M. R.</strong> and Mahmud-Or-Rashid, M.</div>
+          <div class="pub-journal">Journal of Heat and Mass Transfer Research</div>
+          <a href="https://jhmtr.semnan.ac.ir/article_10408.html" target="_blank" class="pub-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Read →</a>
+        </div>
+      </div>
+  </div>
+</section>
+
+<!-- QUICK NAV - Fixed Structure -->
+<section class="sec-alt">
+  <div class="container">
+    <div class="sec-header">
+      <div class="sec-label">Explore</div>
+      <div class="sec-divider"></div>
+    </div>
+    <div class="research-grid anim">
+      <a href="research.html" class="r-card" style="text-decoration:none;color:inherit">
+        <div class="r-card-icon">🔬</div>
+        <h3>Research Focus</h3>
+        <p>
+          <div class="pub-badge published">Additive Manufacturing</div>
+          <div class="pub-badge published">Materials</div>
+          <div class="pub-badge published">Thermo-Fluid</div>
+          <div class="pub-badge published">Machine Learning</div>
+        </p>
+      </a>
+      <a href="publications.html" class="r-card" style="text-decoration:none;color:inherit">
+        <div class="r-card-icon">📄</div>
+        <h3>Publications</h3>
+        <p>One Full Length Research Article, another under review, plus a conference proceedings.</p>
+      </a>
+      <a href="work.html" class="r-card" style="text-decoration:none;color:inherit">
+        <div class="r-card-icon">🛠️</div>
+        <h3>Projects & Skills</h3>
+        <p>
+          <div class="pub-badge published">COMSOl</div>
+          <div class="pub-badge published">ANSYS</div>
+          <div class="pub-badge published">LaTeX</div>
+          <div class="pub-badge published">Python</div>
+          <div class="pub-badge published">Simufact (Additive)</div>
+          <div class="pub-badge published">Solidworks</div>
+        </p>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- RESEARCH VISION -->
+<section class="sec-alt">
+  <div class="container" style="text-align:center;">
+    <div class="sec-header anim">
+      <div class="sec-label">Research Vision</div>
+      <div class="sec-divider"></div>
+    </div>
+    <p class="anim" style="max-width:780px;margin:0 auto;color:var(--text-secondary);font-size:1.02rem;line-height:1.85;text-align:justify;">
+      My research vision centers on closing the gap between computational design and physical fabrication in advanced manufacturing. While investigating thermal degradation in metal cutting, I demonstrated that embedding conductive architectures into cutting inserts could reduce peak temperatures by over 50%. However, conventional machining restricts the fabrication of such topology-optimized, multi-material geometries. This limitation redirected my focus toward additive manufacturing (AM) as an enabling platform to materialize computationally derived designs with tailored thermal, mechanical, and functional properties.  My ultimate research goal in the long run is to focus on interdisciplinary collaborations across design, modeling, and fabrication, <em>specifically in the development of novel smart materials enabled by hybrid additive manufacturing processes.</em></p>
+  </div>
+</section>
+
+
+<!-- OPPORTUNITY CTA -->
+<section class="sec-alt">
+  <div class="container" style="text-align:center;">
+    <div class="r-card anim" style="max-width:650px; margin:0 auto; text-align:center; padding:2rem;">
+      <h3 style="font-family:var(--font-display); font-size:1.3rem; margin-bottom:.5rem;">Open to Masters/PhD & Research Collaborations</h3>
+      <p style="margin-bottom:1.5rem; color:var(--text-secondary);">Open to Masters/Ph.D. opportunities and research collaborations. Currently seeking funding/assistantship opportunities in AM process modeling and smart manufacturing labs.</p>
+      <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+        <a href="contact.html" class="more-btn" style="background:var(--bg-card-alt); color:var(--accent-deep); border:1px solid var(--border-accent);">Contact Me</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-text"><em>Not knowing when the Dawn will come, I open every Door</em>  · <em>Emily Dickinson</em></div>
+    <div class="footer-social">
+      <!-- Email -->
+      <a href="mailto:foyez.mech@gmail.com" title="Email">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </a>
+
+      <!-- Google Scholar -->
+      <a href="https://scholar.google.com/citations?hl=en&user=oq6ybtwAAAAJ&view_op=list_works&gmla=AEk_c1sqfmYS1vi0kVjn9Scnpr8slrNfWEZk5zKQJgxBP-zMBrg4s6K71URTI6DAEUDcnvvOVb4WA1lULMxSlO0R" target="_blank" title="Google Scholar">
+        <img src="Assets/Logo/Google_Scholar_logo.png" alt="Google Scholar" style="width:24px;height:24px;object-fit:contain;">
+      </a>
+
+      <!-- ORCID -->
+      <a href="https://orcid.org/0009-0001-0022-8668" target="_blank" title="ORCID">
+        <img src="Assets/Logo/orcid.png" alt="ORCID" style="width:24px;height:24px;object-fit:contain;">
+      </a>
+
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/foyeasy/" target="_blank" title="LinkedIn">
+        <img src="Assets/Logo/linkedin.png" alt="LinkedIn" style="width:24px;height:24px;object-fit:contain;">
+      </a>
+
+    </div>  
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+// Featured Carousel functionality
+let currentFeaturedSlide = 0;
+const featuredSlides = document.querySelectorAll('.featured-slide');
+const featuredDots = document.querySelectorAll('.featured-dot');
+const totalFeaturedSlides = featuredSlides.length;
+let featuredAutoSlideInterval;
+
+function showFeaturedSlide(n) {
+  featuredSlides.forEach(slide => slide.classList.remove('active'));
+  featuredDots.forEach(dot => dot.classList.remove('active'));
+  
+  featuredSlides[n].classList.add('active');
+  featuredDots[n].classList.add('active');
+  currentFeaturedSlide = n;
+}
+
+function changeFeaturedSlide(direction) {
+  let newSlide = currentFeaturedSlide + direction;
+  if (newSlide >= totalFeaturedSlides) newSlide = 0;
+  if (newSlide < 0) newSlide = totalFeaturedSlides - 1;
+  
+  showFeaturedSlide(newSlide);
+  resetFeaturedAutoSlide();
+}
+
+function goToFeaturedSlide(n) {
+  showFeaturedSlide(n);
+  resetFeaturedAutoSlide();
+}
+
+function autoFeaturedSlide() {
+  let nextSlide = currentFeaturedSlide + 1;
+  if (nextSlide >= totalFeaturedSlides) nextSlide = 0;
+  showFeaturedSlide(nextSlide);
+}
+
+function resetFeaturedAutoSlide() {
+  clearInterval(featuredAutoSlideInterval);
+  featuredAutoSlideInterval = setInterval(autoFeaturedSlide, 6000);
+}
+
+// Initialize featured carousel
+resetFeaturedAutoSlide();
+
+// Scroll animations
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); }
+  });
+}, { threshold: 0.06, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.anim').forEach((el, i) => {
+  el.style.transitionDelay = (i % 6) * 0.06 + 's';
+  obs.observe(el);
+});
+
+// Nav scroll effect + back to top
+window.addEventListener('scroll', () => {
+  document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 15);
+  document.getElementById('btt').classList.toggle('show', window.scrollY > 600);
+});
+
+// Close mobile menu on link click
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+});
+</script>
+</body>
+</html>

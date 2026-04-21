@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work - Mohammad Ramjan Hossain</title>
+<link rel="icon" href="img/fyz_profile.jpg" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;1,6..12,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <div class="nav-brand-text"><span>M. R.</span> Hossain</div>
+    </a>
+    <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="background.html">Background</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="work.html" class="active">Work</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ═══ PROJECTS ═══ -->
+<section>
+  <div class="container">
+    <div class="sec-header-first">
+      <div class="sec-label">Portfolio</div>
+      <div class="sec-divider"></div>
+      <h2>Projects</h2>
+    </div>
+    <div class="proj-list">
+      <!-- Project 1 -->
+      <div class="proj-item" id="proj-1">
+        <div class="proj-header" onclick="toggleProj('proj-1')">
+          <span class="proj-num">01</span>
+          <div class="proj-main">
+            <p class="proj-title">Sonar SLAM (Simultaneous Localization And Mapping)</p>
+            <p class="proj-desc"></p>
+          </div>
+          <div class="proj-tags">
+            <span class="proj-tag">ROS2</span>
+            <span class="proj-tag">RViz2</span>
+            <span class="proj-tag">Gazebo</span>
+          </div>
+          <div class="proj-toggle">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </div>
+        <div class="proj-body">
+          <p class="proj-desc-full">Developed a cost-effective indoor mobile robot that creates 2D maps and performs navigation using ultrasonic sonar sensors instead of expensive LiDAR. It aims to implement SLAM algorithm with map adjustment technique to achieve accurate localization and mapping while minimizing complexity. The robot will also feature obstacle avoidance capabilities.</p>
+          <div class="proj-imgs">
+            <div class="proj-img-slot"><img src="Assets/Projects/SS01.jpg" alt="SS" onerror="this.style.display='none'"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <div class="proj-img-slot"><img src="Assets/Projects/SS02.jpg" alt="SS" onerror="this.style.display='none'"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <div class="proj-img-slot"><img src="Assets/Projects/SS04.jpg" alt="SS" onerror="this.style.display='none'"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="proj-item" id="proj-2">
+        <div class="proj-header" onclick="toggleProj('proj-2')">
+          <span class="proj-num">02</span>
+          <div class="proj-main">
+            <p class="proj-title">Autonomous Rough Terrain Robot</p>
+            <p class="proj-desc"></p>
+          </div>
+          <div class="proj-tags">
+            <span class="proj-tag">ROS2</span>
+            <span class="proj-tag">RViz2</span>
+            <span class="proj-tag">Gazebo</span>
+          </div>
+          <div class="proj-toggle">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </div>
+        <div class="proj-body">
+          <p class="proj-desc-full">An autonomous vehicle is designed for rough terrains. It exhibits dynamic stability during locomotion over uneven landscapes. This system incorporates LiDAR mapping for navigation across various levels within civil infrastructure layouts. Employing a rocker-bogie mechanism ensures upright stability in challenging terrains and facilitates ascending inclines, such as stairs.</p>
+          <div class="proj-imgs">
+            <div class="proj-img-slot"><img src="Assets/Projects/RT02.png" alt="Project image" onerror="this.style.display='none'"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <div class="proj-img-slot"><img src="Assets/Projects/RT01.png" alt="Project image" onerror="this.style.display='none'"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CAD -->
+      <div class="proj-item" id="proj-3">
+        <div class="proj-header" onclick="toggleProj('proj-3')">
+          <span class="proj-num">03</span>
+          <div class="proj-main">
+            <p class="proj-title">CAD Projects</p>
+            <p class="proj-desc"></p>
+          </div>
+          <div class="proj-tags">
+            <span class="proj-tag">SolidWorks</span>
+            <span class="proj-tag">Fusion360</span>
+            <span class="proj-tag">Keyshot</span>
+          </div>
+          <div class="proj-toggle">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-imgs">
+            <div class="proj-img-slot"><img src="Assets/Projects/ACE01.png" alt="Project image" onerror="this.style.display='none'"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <div class="proj-img-slot"><img src="Assets/Projects/AP01.jpg" alt="Project image" onerror="this.style.display='none'"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <div class="proj-img-slot"><img src="Assets/Projects/AC01.png" alt="Project image" onerror="this.style.display='none'"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <div class="proj-img-slot"><img src="Assets/Projects/PF01.jpg" alt="Project image" onerror="this.style.display='none'"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SKILLS ═══ -->
+<section class="sec-alt">
+  <div class="container">
+    <div class="sec-header">
+      <div class="sec-label">Expertise</div>
+      <div class="sec-divider"></div>
+      <h2>Technical Skills</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-group anim"><h3>Programming</h3><div class="skill-tags"><span class="skill-tag">Python</span><span class="skill-tag">C</span><span class="skill-tag">C++</span><span class="skill-tag">MATLAB</span><span class="skill-tag">TensorFlow</span></div></div>
+      <div class="skill-group anim"><h3>Simulation Software</h3><div class="skill-tags"><span class="skill-tag">Comsol Multiphysics</span><span class="skill-tag">ANSYS (Fluent, CFX)</span><span class="skill-tag">Simufact (Additive)</span><span class="skill-tag">DEFORM 3D</span></div></div>
+      <div class="skill-group anim"><h3>CAD Software</h3><div class="skill-tags"><span class="skill-tag">AutoCAD</span><span class="skill-tag">SolidWorks</span><span class="skill-tag">Fusion 360</span><span class="skill-tag">Ansys SpaceClaim</span></div></div>
+      <div class="skill-group anim"><h3>Laboratory Tests</h3><div class="skill-tags"><span class="skill-tag">Tensile</span><span class="skill-tag">Compression</span><span class="skill-tag">Impact</span><span class="skill-tag">Bending</span></div></div>
+      <div class="skill-group anim"><h3>Documentation & Data Visualization</h3><div class="skill-tags"><span class="skill-tag">LaTeX</span><span class="skill-tag">Microsoft Office Suite</span><span class="skill-tag">TechPlot</span><span class="skill-tag">MATLAB</span><span class="skill-tag">OriginLab</span></div></div>
+      <div class="skill-group anim"><h3>Embedded Hardware & Robotics</h3><div class="skill-tags"><span class="skill-tag">Arduino</span><span class="skill-tag">Raspberry Pi</span><span class="skill-tag">ROS (Humble)</span><span class="skill-tag">RViz</span><span class="skill-tag">Gazebo</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ VOLUNTEERING ═══ -->
+<section>
+  <div class="container">
+    <div class="sec-header">
+      <div class="sec-label">Community Service</div>
+      <div class="sec-divider"></div>
+      <h2>Volunteering Experience</h2>
+    </div>
+    <div class="training-list">
+      <div class="train-item anim">
+        <div class="train-date">Apr 2024<br>Jun 2025</div>
+        <div>
+          <h4>Joint Secretary</h4>
+          <h5>RoboSUST</h5>
+          <p>Organized and facilitated a five-day "Introduction to Robotics" workshop, initiating 10 teams into the world of robotics.</p>
+        </div>
+      </div>
+
+      <div class="train-item anim">
+        <div class="train-date">Apr 2023<br>Mar 2024</div>
+        <div>
+          <h4>Organizing Secretary</h4>
+          <h5>RoboSUST</h5>
+          <p>Organized and coordinated various aspects of the Mythical RoboSUST Month-2023 event, including promotional materials and campus coordination.</p>
+        </div>
+      </div>
+
+      <div class="train-item anim">
+        <div class="train-date">Jul 2021<br>Mar 2023</div>
+        <div>
+          <h4>Assistant Secretary of Project and Strategy</h4>
+          <h5>RoboSUST</h5>
+          <p>Assisted with the renovation of the RoboSUST Lab by documenting current lab components and projects, and setting up equipment.</p>
+        </div>
+      </div>
+
+      <div class="train-item anim">
+        <div class="train-date">Oct 2021<br>Dec 2022</div>
+        <div>
+          <h4>Executive Member</h4>
+          <h5>Mechanical Engineering Association of SUST (MEAS)</h5>
+          <p>Assisted in launching the official website, contributing to content planning and data collection.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-text"><em>Not knowing when the Dawn will come, I open every Door</em>  · <em>Emily Dickinson</em></div>
+    <div class="footer-social">
+      <!-- Email -->
+      <a href="mailto:foyez.mech@gmail.com" title="Email">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </a>
+
+      <!-- Google Scholar -->
+      <a href="https://scholar.google.com/citations?hl=en&user=oq6ybtwAAAAJ&view_op=list_works&gmla=AEk_c1sqfmYS1vi0kVjn9Scnpr8slrNfWEZk5zKQJgxBP-zMBrg4s6K71URTI6DAEUDcnvvOVb4WA1lULMxSlO0R" target="_blank" title="Google Scholar">
+        <img src="Assets/Logo/Google_Scholar_logo.png" alt="Google Scholar" style="width:24px;height:24px;object-fit:contain;">
+      </a>
+
+      <!-- ORCID -->
+      <a href="https://orcid.org/0009-0001-0022-8668" target="_blank" title="ORCID">
+        <img src="Assets/Logo/orcid.png" alt="ORCID" style="width:24px;height:24px;object-fit:contain;">
+      </a>
+
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/foyeasy/" target="_blank" title="LinkedIn">
+        <img src="Assets/Logo/linkedin.png" alt="LinkedIn" style="width:24px;height:24px;object-fit:contain;">
+      </a>
+
+    </div>  
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+// Scroll animations
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); }
+  });
+}, { threshold: 0.06, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.anim').forEach((el, i) => {
+  el.style.transitionDelay = (i % 6) * 0.06 + 's';
+  obs.observe(el);
+});
+
+// Nav scroll effect + back to top
+window.addEventListener('scroll', () => {
+  document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 15);
+  document.getElementById('btt').classList.toggle('show', window.scrollY > 600);
+});
+
+// Close mobile menu on link click
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+});
+
+// Toggle down projects for images
+function toggleProj(id) {
+  document.getElementById(id).classList.toggle('open');
+}
+</script>
+</body>
+</html>
