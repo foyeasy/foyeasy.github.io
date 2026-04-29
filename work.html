@@ -206,7 +206,40 @@
       <!-- Project 1 -->
       <div class="proj-item" id="proj-1">
         <div class="proj-header" onclick="toggleProj('proj-1')">
-          <span class="proj-num">01</span>
+          <span class="proj-num"><div class="ref-avatar">i</div></span>
+          <div class="proj-main">
+            <p class="proj-title">Predictive ML Framework for AM Quality Control</p>
+            <p class="proj-desc"></p>
+          </div>
+          <div class="proj-tags">
+            <span class="proj-tag">Gradient Boosting</span>
+            <span class="proj-tag">SMOTE</span>
+            <span class="proj-tag">SHAP</span>
+          </div>
+          <div class="proj-toggle">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </div>
+        <div class="proj-body">
+          <p class="proj-desc-full" style="text-align: justify;">Developed a prescriptive ML framework that ensures print success of Additive Manufacturing (AM) parts by predicting necessary real-time process adjustments (Feed/Speed) with 99.6% accuracy, preventing defects before they occur.<br>
+            <strong> Key Technical Highlights:</strong><br>
+            <strong>Leakage Prevention:</strong> To ensure real-time viability, I identified and removed "leaking" features like quality_score and dimensional_accuracy, which are only available after a print is finished.<br>
+            <strong>Feature Engineering:</strong> Analysis revealed that Process Stability (38.9%), Temperature Variance (31.2%), and Vibration Levels (17.6%) are the primary drivers of quality.<br>
+            <strong>Industrial Readiness:</strong> The model features a 0.8 ms prediction time, making it ideal for edge-computing deployments in Industry 4.0 environments.<br>
+            <strong>Advanced Preprocessing:</strong> Used SMOTE to resolve class imbalance and SHAP analysis to map model predictions back to the underlying physics of 3D printing.
+          </p>
+          <div class="proj-imgs">
+            <div class="proj-img-slot" onclick="openProjModal(0, 0, event)"><img src="Assets/Projects/AMQC01.png" alt="SS" onerror="this.style.display='none'"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg></div>
+            <div class="proj-img-slot" onclick="openProjModal(0, 1, event)"><img src="Assets/Projects/AMQC02.png" alt="SS" onerror="this.style.display='none'"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg></div>
+            <div class="proj-img-slot" onclick="openProjModal(0, 2, event)"><img src="Assets/Projects/AMQC03.png" alt="SS" onerror="this.style.display='none'"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg></div>
+            <div class="proj-img-slot" onclick="openProjModal(0, 3, event)"><img src="Assets/Projects/AMQC04.png" alt="SS" onerror="this.style.display='none'"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg></div>
+          </div>
+        </div>
+      </div>
+      <!-- Project 2 -->
+      <div class="proj-item" id="proj-2">
+        <div class="proj-header" onclick="toggleProj('proj-2')">
+          <span class="proj-num"><div class="ref-avatar">ii</div></span>
           <div class="proj-main">
             <p class="proj-title">Sonar SLAM (Simultaneous Localization And Mapping)</p>
             <p class="proj-desc"></p>
@@ -221,19 +254,19 @@
           </div>
         </div>
         <div class="proj-body">
-          <p class="proj-desc-full">Developed a cost-effective indoor mobile robot that creates 2D maps and performs navigation using ultrasonic sonar sensors instead of expensive LiDAR. It aims to implement SLAM algorithm with map adjustment technique to achieve accurate localization and mapping while minimizing complexity. The robot will also feature obstacle avoidance capabilities.</p>
+          <p class="proj-desc-full" style="text-align: justify;">Developed a cost-effective indoor mobile robot that creates 2D maps and performs navigation using ultrasonic sonar sensors instead of expensive LiDAR. It aims to implement SLAM algorithm with map adjustment technique to achieve accurate localization and mapping while minimizing complexity. The robot will also feature obstacle avoidance capabilities.</p>
           <div class="proj-imgs">
-            <div class="proj-img-slot" onclick="openProjModal(0, 0, event)"><img src="Assets/Projects/SS01.jpg" alt="SS" onerror="this.style.display='none'"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg></div>
-            <div class="proj-img-slot" onclick="openProjModal(0, 1, event)"><img src="Assets/Projects/SS02.jpg" alt="SS" onerror="this.style.display='none'"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg></div>
-            <div class="proj-img-slot" onclick="openProjModal(0, 2, event)"><img src="Assets/Projects/SS04.jpg" alt="SS" onerror="this.style.display='none'"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg></div>
+            <div class="proj-img-slot" onclick="openProjModal(1, 0, event)"><img src="Assets/Projects/SS01.jpg" alt="SS" onerror="this.style.display='none'"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg></div>
+            <div class="proj-img-slot" onclick="openProjModal(1, 1, event)"><img src="Assets/Projects/SS02.jpg" alt="SS" onerror="this.style.display='none'"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg></div>
+            <div class="proj-img-slot" onclick="openProjModal(1, 2, event)"><img src="Assets/Projects/SS04.jpg" alt="SS" onerror="this.style.display='none'"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg></div>
           </div>
         </div>
       </div>
 
-      <!-- Project 2 -->
-      <div class="proj-item" id="proj-2">
-        <div class="proj-header" onclick="toggleProj('proj-2')">
-          <span class="proj-num">02</span>
+      <!-- Project 3 -->
+      <div class="proj-item" id="proj-3">
+        <div class="proj-header" onclick="toggleProj('proj-3')">
+          <span class="proj-num"><div class="ref-avatar">iii</div></span>
           <div class="proj-main">
             <p class="proj-title">Autonomous Rough Terrain Robot</p>
             <p class="proj-desc"></p>
@@ -248,18 +281,42 @@
           </div>
         </div>
         <div class="proj-body">
-          <p class="proj-desc-full">An autonomous vehicle is designed for rough terrains. It exhibits dynamic stability during locomotion over uneven landscapes. This system incorporates LiDAR mapping for navigation across various levels within civil infrastructure layouts. Employing a rocker-bogie mechanism ensures upright stability in challenging terrains and facilitates ascending inclines, such as stairs.</p>
+          <p class="proj-desc-full" style="text-align: justify;">An autonomous vehicle is designed for rough terrains. It exhibits dynamic stability during locomotion over uneven landscapes. This system incorporates LiDAR mapping for navigation across various levels within civil infrastructure layouts. Employing a rocker-bogie mechanism ensures upright stability in challenging terrains and facilitates ascending inclines, such as stairs.</p>
           <div class="proj-imgs">
-            <div class="proj-img-slot" onclick="openProjModal(1, 0, event)"><img src="Assets/Projects/RT02.png" alt="Project image" onerror="this.style.display='none'"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg></div>
-            <div class="proj-img-slot" onclick="openProjModal(1, 1, event)"><img src="Assets/Projects/RT01.png" alt="Project image" onerror="this.style.display='none'"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg></div>
+            <div class="proj-img-slot" onclick="openProjModal(2, 0, event)"><img src="Assets/Projects/RT02.png" alt="Project image" onerror="this.style.display='none'"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg></div>
+            <div class="proj-img-slot" onclick="openProjModal(2, 1, event)"><img src="Assets/Projects/RT01.png" alt="Project image" onerror="this.style.display='none'"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg></div>
+          </div>
+        </div>
+      </div>
+
+            <!-- MATLAB -->
+      <div class="proj-item" id="proj-4">
+        <div class="proj-header" onclick="toggleProj('proj-4')">
+          <span class="proj-num"><div class="ref-avatar">iv</div></span>
+          <div class="proj-main">
+            <p class="proj-title">Spread of COVID-19 in Dhaka City</p>
+            <p class="proj-desc"></p>
+          </div>
+          <div class="proj-tags">
+            <span class="proj-tag">MATLAB</span>
+            <span class="proj-tag">ODE</span>
+          </div>
+          <div class="proj-toggle">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </div>
+        <div class="proj-body">
+          <p class="proj-desc-full" style="text-align: justify;">Developed a mathematical model to simulate the spread of COVID-19 in Dhaka City, Bangladesh, and to use numerical analysis techniques to solve the system of ODEs using MATLAB that describe the dynamics of the disease. The model takes into account factors such as population size, infection rates, recovery rates, and mortality rates, and it provides insights into how various interventions and control measures can affect the spread of the disease.</p>
+          <div class="proj-imgs">
+            <div class="proj-img-slot" onclick="openProjModal(3, 0, event)"><img src="Assets/Projects/MAT01.jpg" alt="Project image" onerror="this.style.display='none'"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg></div>
           </div>
         </div>
       </div>
 
       <!-- CAD -->
-      <div class="proj-item" id="proj-3">
-        <div class="proj-header" onclick="toggleProj('proj-3')">
-          <span class="proj-num">03</span>
+      <div class="proj-item" id="proj-5">
+        <div class="proj-header" onclick="toggleProj('proj-5')">
+          <span class="proj-num"><div class="ref-avatar">v</div></span>
           <div class="proj-main">
             <p class="proj-title">CAD Projects</p>
             <p class="proj-desc"></p>
@@ -275,10 +332,10 @@
         </div>
         <div class="proj-body">
           <div class="proj-imgs">
-            <div class="proj-img-slot" onclick="openProjModal(2, 0, event)"><img src="Assets/Projects/ACE01.png" alt="Project image" onerror="this.style.display='none'"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg></div>
-            <div class="proj-img-slot" onclick="openProjModal(2, 1, event)"><img src="Assets/Projects/AP01.jpg" alt="Project image" onerror="this.style.display='none'"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg></div>
-            <div class="proj-img-slot" onclick="openProjModal(2, 2, event)"><img src="Assets/Projects/AC01.png" alt="Project image" onerror="this.style.display='none'"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg></div>
-            <div class="proj-img-slot" onclick="openProjModal(2, 3, event)"><img src="Assets/Projects/PF01.jpg" alt="Project image" onerror="this.style.display='none'"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg></div>
+            <div class="proj-img-slot" onclick="openProjModal(4, 0, event)"><img src="Assets/Projects/ACE01.png" alt="Project image" onerror="this.style.display='none'"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg></div>
+            <div class="proj-img-slot" onclick="openProjModal(4, 1, event)"><img src="Assets/Projects/AP01.jpg" alt="Project image" onerror="this.style.display='none'"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg></div>
+            <div class="proj-img-slot" onclick="openProjModal(4, 2, event)"><img src="Assets/Projects/AC01.png" alt="Project image" onerror="this.style.display='none'"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg></div>
+            <div class="proj-img-slot" onclick="openProjModal(4, 3, event)"><img src="Assets/Projects/PF01.jpg" alt="Project image" onerror="this.style.display='none'"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg></div>
           </div>
         </div>
       </div>
@@ -381,6 +438,12 @@
       <a href="mailto:foyez.mech@gmail.com" title="Email">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
       </a>
+
+      <!-- GitHub -->
+      <a href="https://github.com/foyeasy" target="_blank" title="GitHub">
+        <img src="Assets/Logo/github.svg" alt="GitHub" style="width:24px;height:24px;object-fit:contain;">
+      </a>
+
 
       <!-- Google Scholar -->
       <a href="https://scholar.google.com/citations?hl=en&user=oq6ybtwAAAAJ&view_op=list_works&gmla=AEk_c1sqfmYS1vi0kVjn9Scnpr8slrNfWEZk5zKQJgxBP-zMBrg4s6K71URTI6DAEUDcnvvOVb4WA1lULMxSlO0R" target="_blank" title="Google Scholar">
