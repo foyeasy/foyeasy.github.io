@@ -1,0 +1,59 @@
+# ─────────────────────────────────────────────
+# research.yml
+# Drives the Research page: experience timeline + research interests.
+# ─────────────────────────────────────────────
+
+# ── Research experience (expandable timeline cards) ──
+experience:
+  - id: thesis
+    period: "Feb 2024 – Jul 2025"
+    title: "Undergraduate Thesis"
+    institution: "Mechanical Engineering, Shahjalal University of Science and Technology"
+    logo: /Assets/Logo/SUST logo.png
+    project: "Enhancing Cutting Tool Durability by Addressing Thermal Effects: A Numerical Study."
+    supervisor_label: "Supervisor"
+    supervisor: "MD. MAHMUD-OR-RASHID, Assistant Professor, Mechanical Engineering, SUST"
+    bullets:
+      - "Investigated conjugate heat transfer in cutting inserts using COMSOL Multiphysics to minimize thermal effects and enhance tool life."
+      - "Introduced two key cutting parameters: the angle of attack of the coolant and the insert hole size."
+      - "Modeled a non-conventional cutting insert with a conductive core to reduce cutting temperature."
+      - "This research resulted in <strong>three</strong> publications in both a journal and a conference proceedings."
+    images:
+      - { src: /Assets/Research/UGT01.png, alt: "Thesis: cutting insert thermal simulation" }
+      - { src: /Assets/Research/UGT02.png, alt: "Thesis: temperature distribution result" }
+      - { src: /Assets/Research/UGT03.png, alt: "Thesis: parametric study results" }
+
+  - id: research-assistant
+    period: "Feb 2024 – Jul 2025"
+    title: "Research Assistant"
+    institution: "SUST Research Center, Shahjalal University of Science and Technology"
+    logo: /Assets/Logo/SUST logo.png
+    project: "Integrating Machine Learning with IoT for Smart Indoor Farming Management."
+    supervisor_label: "Principal Investigator"
+    supervisor: "MD. SYAMUL BASHAR, Assistant Professor, Mechanical Engineering, SUST"
+    bullets:
+      - "Designed and deployed a vertical hydroponic farming setup with embedded hardware (Raspberry Pi)."
+      - "Implemented Convolutional Neural Networks (CNN) for crop disease and nutrient deficiency detection."
+      - "Presented findings at the <strong>12th Annual Conference on Research and Innovations 2024</strong>."
+      - "Processed and visualized data using Numpy, Seaborn, and Matplotlib, and documented it in LaTeX."
+    images:
+      - { src: /Assets/Research/RA01.png, alt: "Smart farming: vertical hydroponic setup" }
+      - { src: /Assets/Research/RA02.png, alt: "Smart farming: Raspberry Pi hardware" }
+      - { src: /Assets/Research/RA03.png, alt: "Smart farming: CNN detection output" }
+      - { src: /Assets/Research/RA04.png, alt: "Smart farming: sensor data plots" }
+
+
+# ── Research interests (cards) ──
+interests:
+  - title: "Additive Manufacturing"
+    text: "3D printing technologies, process optimization, and material properties in advanced manufacturing."
+  - title: "Materials Characterization"
+    text: "Material properties, microstructure analysis, and mechanical testing methodologies."
+  - title: "Surface Tribology"
+    text: "Friction, wear, and lubrication phenomena at material interfaces and surfaces."
+  - title: "Machine Learning"
+    text: "AI/ML techniques for data analysis, predictive modeling, and intelligent automation."
+  - title: "Thermo-Fluid Dynamics"
+    text: "Heat transfer, fluid flow, and thermodynamic processes in complex systems."
+  - title: "Control Engineering"
+    text: "Designing and optimizing control systems for process automation and system regulation."

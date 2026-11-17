@@ -1,0 +1,121 @@
+# ─────────────────────────────────────────────
+# profile.yml: who you are, shown across the site
+# Edit values here; no HTML changes needed.
+# ─────────────────────────────────────────────
+name: "Mohammad Ramjan Hossain"
+first_names: "MOHAMMAD RAMJAN"     # hero line 1
+last_name: "HOSSAIN"               # hero line 2 (cobalt)
+cite_name: "Hossain, M. R."        # how you appear in publications.yml (this author gets bolded)
+short_name: "M. R. Hossain"        # navbar brand
+brand_prefix: "M. R."              # highlighted part of navbar brand
+brand_suffix: "Hossain"
+
+title: "Graduate Mechanical Engineer | Prospective Masters/PhD Student"
+affiliation:
+  name: "Shahjalal University of Science and Technology"
+  logo: /Assets/Logo/SUST logo.png
+
+photo: /Assets/fyz-min.png
+photo_alt: "Portrait of Mohammad Ramjan Hossain"
+
+summary: >-
+  Exploring additive manufacturing, materials characterization and thermal
+  management in advanced machining. Combining multi-physics simulation,
+  control systems, and machine learning to bridge design, fabrication, and
+  in-situ process control.
+
+research_vision: >-
+  My research vision centers on closing the gap between computational design
+  and physical fabrication in advanced manufacturing. While investigating
+  thermal degradation in metal cutting, I demonstrated that embedding
+  conductive architectures into cutting inserts could reduce peak temperatures
+  by over 50%. However, conventional machining restricts the fabrication of
+  such topology-optimized, multi-material geometries. This limitation
+  redirected my focus toward additive manufacturing (AM) as an enabling
+  platform to materialize computationally derived designs with tailored
+  thermal, mechanical, and functional properties. My ultimate research goal in
+  the long run is to focus on interdisciplinary collaborations across design,
+  modeling, and fabrication,
+vision_emphasis: >-
+  specifically in the development of novel smart materials enabled by hybrid
+  additive manufacturing processes.
+
+# Hero stats. "publications" is computed from publications.yml, so it is not typed here.
+cgpa: "3.45"
+cgpa_scale: "4.00"
+
+# "Open to Masters/PhD" call-to-action card on the home page.
+# Set open_to_work to false to hide the whole card.
+open_to_work: true
+open_status:
+  heading: "Open to Masters/PhD & Research Collaborations"
+  text: >-
+    Open to Masters/Ph.D. opportunities and research collaborations. Currently
+    seeking funding/assistantship opportunities in AM process modeling,
+    materials and smart manufacturing labs.
+  button_label: "Contact Me"
+  button_url: /contact/
+
+# Tag chips on the home "Explore" cards
+focus_tags:
+  - Additive Manufacturing
+  - Materials
+  - Thermo-Fluid
+  - Machine Learning
+skill_tags:
+  - COMSOL
+  - ANSYS
+  - LaTeX
+  - Python
+  - Simufact (Additive)
+  - SolidWorks
+
+# Contact details
+contact:
+  email: "foyez.mech@gmail.com"
+  phone: "+880 18786 70480"
+  city: "Gazipur, Bangladesh"
+  intro: "Open to research collaborations, academic discussions, and graduate opportunities"
+
+# Footer quote
+footer_quote: "Not knowing when the Dawn will come, I open every Door"
+footer_quote_author: "Emily Dickinson"
+
+# Social links. `icon` is a file in /Assets/Logo/ (email uses an inline SVG).
+social:
+  - name: "Email"
+    url: "mailto:foyez.mech@gmail.com"
+    icon: email
+  - name: "GitHub"
+    url: "https://github.com/foyeasy"
+    icon: "/Assets/Logo/github.svg"
+  - name: "Google Scholar"
+    url: "https://scholar.google.com/citations?hl=en&user=oq6ybtwAAAAJ&view_op=list_works"
+    icon: "/Assets/Logo/Google_Scholar_logo.png"
+  - name: "ORCID"
+    url: "https://orcid.org/0009-0001-0022-8668"
+    icon: "/Assets/Logo/orcid.png"
+  - name: "LinkedIn"
+    url: "https://www.linkedin.com/in/foyeasy/"
+    icon: "/Assets/Logo/linkedin.png"
+
+# References (shown on the Contact page)
+references:
+  - initials: "MM"
+    name: "Md. Mahmud-Or-Rashid"
+    role: "Assistant Professor & Supervisor"
+    dept: "Department of Mechanical Engineering,"
+    institution: "Shahjalal University of Science and Technology (SUST)"
+    email: "mmrashid-mee@sust.edu"
+  - initials: "SB"
+    name: "Md. Syamul Bashar"
+    role: "Assistant Professor & Principal Investigator"
+    dept: "Department of Mechanical Engineering,"
+    institution: "Shahjalal University of Science and Technology (SUST)"
+    email: "md.syamul-mee@sust.edu"
+  - initials: "MR"
+    name: "Mostafa Rafid"
+    role: "Lecturer & Project Supervisor"
+    dept: "Department of Mechanical Engineering,"
+    institution: "Shahjalal University of Science and Technology (SUST)"
+    email: "rafid-mee@sust.edu"

@@ -1,0 +1,92 @@
+# ─────────────────────────────────────────────
+# publications.yml
+# To add a publication: copy one block, paste it anywhere in the list, edit, commit.
+# The site sorts by `date` (newest first), so order in this file does not matter.
+#
+# Fields
+#   id        unique slug, used for the BibTeX key and the copy buttons
+#   title     full title
+#   authors   list, in order. Your own name must be written exactly as
+#             "cite_name" in profile.yml so it gets bolded.
+#   venue     journal / conference / repository name
+#   date      YYYY-MM-DD (day can be 01 if unknown)
+#   type      journal | preprint | presentation
+#   status    published | review   (review = gold badge, e.g. "In Revision")
+#   doi       DOI only, e.g. 10.1002/htj.70387 (leave "" if none)
+#   url       link for the "Read" button (leave "" if none)
+#   logo      short text for the little venue tile
+#   logo_sub  tiny caption under it
+#   keywords  list, used by the search box
+#
+# type "presentation" is NOT counted in the "Publications" number on the home
+# page; it is counted separately as "Conference Presentation".
+# ─────────────────────────────────────────────
+
+- id: hossain2026optimized
+  title: "Optimized Thermal Dissipation of ISO SNGA 120408 Carbide Tool by Tuning Parameters: A Numerical Study"
+  authors:
+    - "Hossain, M. R."
+    - "Islam, M. S."
+    - "Mahmud-Or-Rashid, M."
+  venue: "Heat Transfer"
+  publisher: "Wiley"
+  date: 2026-09-01
+  type: journal
+  status: published
+  doi: "10.1002/htj.70387"
+  url: "https://doi.org/10.1002/htj.70387"
+  logo: "Wiley"
+  logo_sub: "Heat Transfer"
+  keywords: [cutting tool, thermal management, carbide, COMSOL, conjugate heat transfer, numerical]
+
+- id: islam2026thermal
+  title: "Thermal Performance of Carbide Tools with Optimized Textured Rake Surface Filled with Conductive Materials"
+  authors:
+    - "Islam, M. S."
+    - "Hossain, M. R."
+    - "Mahmud-Or-Rashid, M."
+  venue: "SSRN Electronic Journal"
+  publisher: "SSRN"
+  date: 2026-02-01
+  type: preprint
+  status: published
+  doi: "10.2139/ssrn.6201558"
+  url: "http://dx.doi.org/10.2139/ssrn.6201558"
+  logo: "SSRN"
+  logo_sub: "Open Access"
+  keywords: [textured rake surface, carbide tool, conductive filler, thermal, numerical]
+
+- id: islam2026enhancing
+  title: "Enhancing Carbide Cutting Tool Thermal Management through Embedded Copper Core: A Numerical Approach"
+  authors:
+    - "Islam, M. S."
+    - "Hossain, M. R."
+    - "Mahmud-Or-Rashid, M."
+  venue: "Journal of Heat and Mass Transfer Research"
+  publisher: "Semnan University"
+  date: 2026-01-01
+  type: journal
+  status: published
+  doi: ""
+  url: "https://jhmtr.semnan.ac.ir/article_10408.html"
+  logo: "JHMTR"
+  logo_sub: "Open Access"
+  keywords: [copper core, carbide insert, cutting tool, thermal management, numerical]
+
+- id: hossain2025integrating
+  title: "Integrating Machine Learning with IoT for Smart Indoor Farming Management"
+  authors:
+    - "Hossain, M. R."
+    - "Akter, L."
+    - "Bashar, M. S."
+    - "Zisan, H. T. A."
+  venue: "12th Annual Conference on Research and Innovations 2024, SUST"
+  publisher: "Shahjalal University of Science and Technology"
+  date: 2025-02-01
+  type: presentation
+  status: published
+  doi: ""
+  url: ""
+  logo: "SUST"
+  logo_sub: "Intra-University"
+  keywords: [machine learning, IoT, hydroponics, CNN, Raspberry Pi, smart farming]

@@ -1,0 +1,44 @@
+# ─────────────────────────────────────────────
+# news.yml: short dated updates
+# To add news: copy a block, edit it, commit. Newest by `date` is shown first.
+# The home page shows the most recent items (count set by home.news_count in _config.yml).
+#
+# Fields
+#   date   YYYY-MM-DD
+#   text   one or two sentences (plain text)
+#   tag    short label: Publication | Work | Event | Education | Update
+#   link   optional URL (leave "" for none)
+#
+# NOTE: these entries are drafted from what is on your current site.
+# Please check the dates and wording before publishing.
+# ─────────────────────────────────────────────
+
+- date: 2026-09-01
+  tag: Publication
+  text: "Paper published in Heat Transfer (Wiley): Optimized Thermal Dissipation of ISO SNGA 120408 Carbide Tool by Tuning Parameters."
+  link: "https://doi.org/10.1002/htj.70387"
+
+- date: 2026-07-01
+  tag: Work
+  text: "Started as Technical Consultant for a government agency, working on CAD design and CFD species-mixing simulations."
+  link: /work/
+
+- date: 2026-02-01
+  tag: Publication
+  text: "Preprint posted on SSRN: Thermal Performance of Carbide Tools with Optimized Textured Rake Surface Filled with Conductive Materials."
+  link: "http://dx.doi.org/10.2139/ssrn.6201558"
+
+- date: 2026-01-01
+  tag: Publication
+  text: "Paper published in the Journal of Heat and Mass Transfer Research: Enhancing Carbide Cutting Tool Thermal Management through Embedded Copper Core."
+  link: "https://jhmtr.semnan.ac.ir/article_10408.html"
+
+- date: 2026-01-01
+  tag: Education
+  text: "Completed the Udemy course Industry 4.0 I: Foundations of Smart Manufacturing."
+  link: /background/
+
+- date: 2025-02-01
+  tag: Event
+  text: "Presented at the 12th Annual Conference on Research and Innovations 2024, SUST: Integrating Machine Learning with IoT for Smart Indoor Farming Management."
+  link: /publications/

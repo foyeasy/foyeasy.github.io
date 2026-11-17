@@ -1,0 +1,170 @@
+# ─────────────────────────────────────────────
+# projects.yml
+# Drives: home-page carousel + everything on the Work page.
+# To add something, copy a block into the right list and commit.
+# ─────────────────────────────────────────────
+
+# ── 1. HOME CAROUSEL ─────────────────────────
+# Images are referenced as .webp. Convert the PNGs in /Assets/Carousel/ to WebP
+# (same file names, .webp extension) before pushing. Keep alt text meaningful.
+carousel:
+  - image: /Assets/Carousel/UGT01.webp
+    alt: "Undergraduate thesis: simulation result of the cutting insert thermal model"
+    caption: "Undergraduate Thesis"
+    link: /research/
+  - image: /Assets/Carousel/UGT02.webp
+    alt: "Undergraduate thesis: temperature distribution in the cutting insert"
+    caption: "Undergraduate Thesis"
+    link: /research/
+  - image: /Assets/Carousel/UGT03.webp
+    alt: "Undergraduate thesis: parametric study of coolant angle and insert hole size"
+    caption: "Undergraduate Thesis"
+    link: /research/
+  - image: /Assets/Carousel/RA01.webp
+    alt: "Research assistant project: vertical hydroponic farming setup"
+    caption: "Smart Indoor Farming (ML + IoT)"
+    link: /research/
+  - image: /Assets/Carousel/RA02.webp
+    alt: "Research assistant project: Raspberry Pi based sensing hardware"
+    caption: "Smart Indoor Farming (ML + IoT)"
+    link: /research/
+  - image: /Assets/Carousel/RA03.webp
+    alt: "Research assistant project: CNN crop disease detection output"
+    caption: "Smart Indoor Farming (ML + IoT)"
+    link: /research/
+  - image: /Assets/Carousel/RA04.webp
+    alt: "Research assistant project: data visualization of sensor readings"
+    caption: "Smart Indoor Farming (ML + IoT)"
+    link: /research/
+  - image: /Assets/Carousel/AMQC_P01.webp
+    alt: "Predictive ML framework for additive manufacturing quality control: results chart"
+    caption: "Predictive ML for AM Quality Control"
+    link: /work/
+  - image: /Assets/Carousel/AMQC_P02.webp
+    alt: "Predictive ML framework for additive manufacturing quality control: feature importance"
+    caption: "Predictive ML for AM Quality Control"
+    link: /work/
+
+
+# ── 2. PROFESSIONAL EXPERIENCE ───────────────
+experience:
+  - period: "Jul 2026 – Present"
+    role: "Technical Consultant"
+    org: "Government Agency"
+    org_note: "name withheld under NDA"
+    bullets:
+      - "Provided end-to-end design consulting, covering concept development, detailed modeling and documentation."
+      - "Translated limited inputs (reference images, verbal explanations, early-stage ideas) into accurate, manufacturable CAD designs."
+      - "Performed computational fluid dynamics (CFD) simulations of two-component species mixing in ANSYS and COMSOL, modeling flow behavior, species transport and mixing uniformity."
+      - "Maintained strict confidentiality and secure handling of sensitive design data throughout engagements."
+
+
+# ── 3. PROJECTS (Work page) ──────────────────
+# images: list of {src, alt}. A project with no `description` and no `highlights`
+# (like CAD Projects) simply shows its image gallery.
+projects:
+  - id: am-qc
+    title: "Predictive ML Framework for AM Quality Control"
+    tags: [Gradient Boosting, SMOTE, SHAP]
+    description: >-
+      Developed a prescriptive ML framework that ensures print success of
+      Additive Manufacturing (AM) parts by predicting necessary real-time
+      process adjustments (Feed/Speed) with 99.6% accuracy, preventing defects
+      before they occur.
+    highlights_title: "Key Technical Highlights"
+    highlights:
+      - label: "Leakage Prevention"
+        text: >-
+          To ensure real-time viability, I identified and removed "leaking"
+          features like quality_score and dimensional_accuracy, which are only
+          available after a print is finished.
+      - label: "Feature Engineering"
+        text: >-
+          Analysis revealed that Process Stability (38.9%), Temperature
+          Variance (31.2%), and Vibration Levels (17.6%) are the primary
+          drivers of quality.
+      - label: "Industrial Readiness"
+        text: >-
+          The model features a 0.8 ms prediction time, making it ideal for
+          edge-computing deployments in Industry 4.0 environments.
+      - label: "Advanced Preprocessing"
+        text: >-
+          Used SMOTE to resolve class imbalance and SHAP analysis to map model
+          predictions back to the underlying physics of 3D printing.
+    images:
+      - { src: /Assets/Projects/AMQC01.png, alt: "AM quality control model: overview" }
+      - { src: /Assets/Projects/AMQC02.png, alt: "AM quality control model: performance metrics" }
+      - { src: /Assets/Projects/AMQC03.png, alt: "AM quality control model: SHAP analysis" }
+      - { src: /Assets/Projects/AMQC04.png, alt: "AM quality control model: feature importance" }
+
+  - id: sonar-slam
+    title: "Sonar SLAM (Simultaneous Localization And Mapping)"
+    tags: [ROS2, RViz2, Gazebo]
+    description: >-
+      Developed a cost-effective indoor mobile robot that creates 2D maps and
+      performs navigation using ultrasonic sonar sensors instead of expensive
+      LiDAR. It aims to implement SLAM algorithm with map adjustment technique
+      to achieve accurate localization and mapping while minimizing complexity.
+      The robot will also feature obstacle avoidance capabilities.
+    images:
+      - { src: /Assets/Projects/SS01.jpg, alt: "Sonar SLAM robot: hardware build" }
+      - { src: /Assets/Projects/SS02.jpg, alt: "Sonar SLAM robot: sensor layout" }
+      - { src: /Assets/Projects/SS04.jpg, alt: "Sonar SLAM robot: generated 2D map" }
+
+  - id: rough-terrain
+    title: "Autonomous Rough Terrain Robot"
+    tags: [ROS2, RViz2, Gazebo]
+    description: >-
+      An autonomous vehicle is designed for rough terrains. It exhibits dynamic
+      stability during locomotion over uneven landscapes. This system
+      incorporates LiDAR mapping for navigation across various levels within
+      civil infrastructure layouts. Employing a rocker-bogie mechanism ensures
+      upright stability in challenging terrains and facilitates ascending
+      inclines, such as stairs.
+    images:
+      - { src: /Assets/Projects/RT02.png, alt: "Rough terrain robot: rocker-bogie mechanism" }
+      - { src: /Assets/Projects/RT01.png, alt: "Rough terrain robot: simulation view" }
+
+  - id: covid-dhaka
+    title: "Spread of COVID-19 in Dhaka City"
+    tags: [MATLAB, ODE]
+    description: >-
+      Developed a mathematical model to simulate the spread of COVID-19 in
+      Dhaka City, Bangladesh, and to use numerical analysis techniques to solve
+      the system of ODEs using MATLAB that describe the dynamics of the
+      disease. The model takes into account factors such as population size,
+      infection rates, recovery rates, and mortality rates, and it provides
+      insights into how various interventions and control measures can affect
+      the spread of the disease.
+    images:
+      - { src: /Assets/Projects/MAT01.jpg, alt: "COVID-19 spread model: simulated infection curves" }
+
+  - id: cad
+    title: "CAD Projects"
+    tags: [SolidWorks, Fusion360, Keyshot]
+    description: ""
+    images:
+      - { src: /Assets/Projects/ACE01.png, alt: "CAD project: rendered 3D model" }
+      - { src: /Assets/Projects/AP01.jpg, alt: "CAD project: assembly model" }
+      - { src: /Assets/Projects/AC01.png, alt: "CAD project: component design" }
+      - { src: /Assets/Projects/PF01.jpg, alt: "CAD project: product visualization" }
+
+
+# ── 4. VOLUNTEERING ──────────────────────────
+volunteering:
+  - period: "Apr 2024 – Jun 2025"
+    role: "Joint Secretary"
+    org: "RoboSUST"
+    text: "Organized and facilitated a five-day \"Introduction to Robotics\" workshop, initiating 10 teams into the world of robotics."
+  - period: "Apr 2023 – Mar 2024"
+    role: "Organizing Secretary"
+    org: "RoboSUST"
+    text: "Organized and coordinated various aspects of the Mythical RoboSUST Month-2023 event, including promotional materials and campus coordination."
+  - period: "Jul 2021 – Mar 2023"
+    role: "Assistant Secretary of Project and Strategy"
+    org: "RoboSUST"
+    text: "Assisted with the renovation of the RoboSUST Lab by documenting current lab components and projects, and setting up equipment."
+  - period: "Oct 2021 – Dec 2022"
+    role: "Executive Member"
+    org: "Mechanical Engineering Association of SUST (MEAS)"
+    text: "Assisted in launching the official website, contributing to content planning and data collection."
