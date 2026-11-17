@@ -1,0 +1,109 @@
+# ─────────────────────────────────────────────
+# background.yml
+# Drives the Background page: education, trainings, courses, and skills.
+# ─────────────────────────────────────────────
+
+# ── Education ──
+education:
+  - period: "2020 – 2025"
+    degree: "Bachelor of Science (Engineering) in Mechanical Engineering"
+    institution: "Shahjalal University of Science and Technology, Sylhet-3114, Bangladesh"
+    logo: /Assets/Logo/SUST logo.png
+    logo_alt: "SUST"
+    grade_label: "CGPA"
+    cgpa: "3.45"
+    cgpa_scale: "4.00"
+    coursework_label: "Undergraduate Level Course"
+    coursework: >-
+      MEE176: Foundry and Welding Shops; MEE141: Programming Methodology;
+      MEE178: Machine Shop Practice; MEE231: Basic Thermodynamics; MEE251:
+      Engineering Mechanics; MEE245: Numerical Analysis; MEE253: Mechanics of
+      Solids; MEE255: Engineering Materials (Metallic and Composites); MEE321
+      & MEE323: Fluid Mechanics I & II; MEE331 & MEE333: Heat Transfer I & II;
+      MEE355 & MEE357: Machine Design I & II; MEE375: Machine Tools; MEE351:
+      Mechanics of Machinery; MEE371: Production Processes; MEE367:
+      Instrumentation and Measurement; MEE421: Fluid Machinery; MEE431: IC
+      Engines; MEE435: Refrigeration and Building Mechanical System; MEE461:
+      Control Engineering; MEE433: Power Plant Engineering; MEE441: Applied
+      Engineering Mathematics; MEE481: Automobile Engineering
+    
+  - period: "2017 – 2019"
+    degree: "Higher Secondary Certificate (HSC) in Science"
+    institution: "Gridakalindia Hazera Hasmot University and College, Faridgang-3650, Chandpur, Bangladesh"
+    logo: /Assets/Logo/Logo_of_Gridkalindia_College.png
+    logo_alt: "Gridkalindia College"
+    grade_label: "GPA"
+    cgpa: "4.58"
+    cgpa_scale: "5.00"
+  
+
+# ── Trainings ──
+trainings:
+  - period: "10 Jan 2024 – 23 Jan 2024"
+    title: "Industrial Trainee"
+    org: "Bangladesh Steel Re-rolling Mills Ltd, Bangladesh"
+    logo: /Assets/Logo/bsrm.png
+    logo_alt: "BSRM"
+    text: "Gained comprehensive knowledge of steel manufacturing, including furnace operations, rolling mills, and quality control."
+  - period: "23 Aug 2023"
+    title: "Industrial Trainee"
+    org: "Chevron, Bangladesh"
+    logo: /Assets/Logo/Chevron_Logo.png
+    logo_alt: "Chevron"
+    text: "Observed and documented natural gas extraction and purification processes, from wellhead to national grid supply."
+  - period: "01 Jan 2017 – 31 Mar 2017"
+    title: "Diploma in Software Application"
+    org: "Postal Academy, Rajshahi, Bangladesh"
+    logo: /Assets/Logo/postal.jpg
+    logo_alt: "Postal Academy"
+    text: "Gained insights of Microsoft Office Suite and Documentation."
+
+
+# ── Additional courses & workshops ──
+# The first `courses_visible` items show by default; the rest sit behind "Show all".
+# Keep newest first if you like; the site shows them in the order written here.
+courses_visible: 3
+courses:
+  - date: "Jan 2026"
+    title: "Industry 4.0 I: Foundations of Smart Manufacturing"
+    provider: "Udemy"
+  - date: "Sep 2025"
+    title: "Additive Manufacturing and 3D Printing using ANSYS Spaceclaim"
+    provider: "Skill-Lync"
+  - date: "Aug 2025"
+    title: "Applied Deep Learning & Neural Network"
+    provider: "EDUCBA"
+  - date: "Aug 2024"
+    title: "HVAC Duct Design with Software Application"
+    provider: "ExpertEase Global"
+  - date: "Mar 2023"
+    title: "MATLAB Essentials"
+    provider: "SolidProfessor"
+  - date: "Mar 2023"
+    title: "MATLAB Advanced Concepts"
+    provider: "SolidProfessor"
+  - date: "May 2021"
+    title: "Introduction to Autodesk Fusion 360"
+    provider: "Inspore Engineering Bangladesh"
+  - date: "Mar 2020"
+    title: "Pychamp 2020: A basic to advance workshop on Python"
+    provider: "RoboSUST"
+
+
+# ── Technical skills ──
+# Currently commented out on your live Work page. Set show_skills: true to display
+# them on the Background page.
+show_skills: false
+skills:
+  - group: "Programming"
+    items: [Python, C, C++, MATLAB, TensorFlow]
+  - group: "Simulation Software"
+    items: [Comsol Multiphysics, "ANSYS (Fluent, CFX)", Simufact (Additive), DEFORM 3D]
+  - group: "CAD Software"
+    items: [AutoCAD, SolidWorks, Fusion 360, Ansys SpaceClaim]
+  - group: "Laboratory Tests"
+    items: [Tensile, Compression, Impact, Bending]
+  - group: "Documentation & Data Visualization"
+    items: [LaTeX, Microsoft Office Suite, TechPlot, MATLAB, OriginLab]
+  - group: "Embedded Hardware & Robotics"
+    items: [Arduino, Raspberry Pi, ROS (Humble), RViz, Gazebo]

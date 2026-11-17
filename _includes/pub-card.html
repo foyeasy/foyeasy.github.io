@@ -1,0 +1,71 @@
+{%- comment -%}
+  One publication card. Used on the home page (Latest Publication) and the Publications page.
+  Usage: {% include pub-card.html pub=some_entry_from_publications_yml %}
+
+  The data-* attributes feed the JavaScript:
+    data-search / data-year / data-type → filter + search box (publications.js)
+    data-title, data-authors, ...       → "Copy citation" / "BibTeX" buttons (cite.js)
+{%- endcomment -%}
+{%- assign pub = include.pub -%}
+{%- assign me = site.data.profile.cite_name | default: "Hossain, M. R." -%}
+{%- assign year = pub.date | date: "%Y" -%}
+{%- assign authors_str = pub.authors | join: " " -%}
+{%- assign kw_str = pub.keywords | join: " " -%}
+{%- capture search_text -%}{{ pub.title }} {{ authors_str }} {{ pub.venue }} {{ kw_str }} {{ pub.type }} {{ year }}{%- endcapture -%}
+
+<article class="pub-card anim"
+  data-year="{{ year }}"
+  data-type="{{ pub.type }}"
+  data-search="{{ search_text | downcase | escape }}"
+  data-id="{{ pub.id }}"
+  data-title="{{ pub.title | escape }}"
+  data-authors="{{ pub.authors | join: ' and ' | escape }}"
+  data-venue="{{ pub.venue | escape }}"
+  data-publisher="{{ pub.publisher | escape }}"
+  data-date="{{ pub.date | date: '%Y-%m-%d' }}"
+  data-doi="{{ pub.doi }}"
+  data-url="{{ pub.url }}">
+
+  <div class="pub-logo" aria-hidden="true">
+    <span class="pub-logo-main">{{ pub.logo }}</span>
+    <span class="pub-logo-sub">{{ pub.logo_sub }}</span>
+  </div>
+
+  <div>
+    <div>
+      <span class="pub-badge{% if pub.status == 'review' %} review{% endif %}">
+        {%- if pub.status == 'review' %}In Review &middot; {{ year }}{% else %}{{ pub.date | date: "%b, %Y" }}{% endif -%}
+      </span>
+      <span class="pub-badge review">
+        {%- case pub.type -%}
+          {%- when 'journal' -%}Journal article
+          {%- when 'preprint' -%}Preprint
+          {%- when 'presentation' -%}Conference presentation
+          {%- else -%}{{ pub.type | capitalize }}
+        {%- endcase -%}
+      </span>
+    </div>
+
+    <h3 class="pub-title">{{ pub.title }}</h3>
+
+    <p class="pub-authors">
+      {%- for a in pub.authors -%}
+        {%- unless forloop.first -%}{%- if forloop.last %} and {% else %}, {% endif -%}{%- endunless -%}
+        {%- if a == me -%}<strong>{{ a }}</strong>{%- else -%}{{ a }}{%- endif -%}
+      {%- endfor -%}
+    </p>
+
+    <p class="pub-journal">{{ pub.venue }}</p>
+
+    <div class="pub-actions">
+      {%- if pub.url != "" and pub.url %}
+      <a href="{{ pub.url }}" target="_blank" rel="noopener noreferrer" class="pub-link" aria-label="Read: {{ pub.title | escape }} (opens in a new tab)">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        Read
+      </a>
+      {%- endif %}
+      <button type="button" class="mini-btn" data-copy="citation" aria-label="Copy citation for {{ pub.title | escape }}">Copy citation</button>
+      <button type="button" class="mini-btn" data-copy="bibtex" aria-label="Copy BibTeX for {{ pub.title | escape }}">BibTeX</button>
+    </div>
+  </div>
+</article>

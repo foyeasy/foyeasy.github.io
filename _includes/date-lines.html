@@ -1,0 +1,10 @@
+{%- comment -%}
+  Prints a date range on two lines, e.g. "10 Jan 2024 – 23 Jan 2024"
+  becomes   10 Jan 2024
+            23 Jan 2024
+  Usage: {% include date-lines.html value=item.period %}
+  A single date ("23 Aug 2023") stays on one line.
+  The range must be written with " – " (space, en dash, space) in the data file.
+{%- endcomment -%}
+{%- assign parts = include.value | split: " – " -%}
+{%- for part in parts -%}<span class="date-line">{{ part }}</span>{%- endfor -%}

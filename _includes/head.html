@@ -1,0 +1,38 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1546D9">
+
+{%- comment -%}
+  SEO + social preview (one tag does all of this):
+    <title>, meta description, canonical URL,
+    Open Graph (Facebook/LinkedIn) + Twitter card tags, and JSON-LD.
+  Values come from each page's front matter (title, description, image)
+  and fall back to _config.yml (title, description, image).
+  Do NOT add a separate <title> tag; it would be duplicated.
+{%- endcomment -%}
+{% seo %}
+
+<link rel="icon" href="{{ '/Assets/Logo/fyz_profile.jpg' | relative_url }}" type="image/jpeg">
+
+<!-- Fonts: preconnect first so they load faster -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,600;0,6..12,700;0,6..12,800;1,6..12,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="{{ '/Assets/css/main.css' | relative_url }}">
+
+<!-- Runs before the page paints, so there is no flash of the wrong theme.
+     1) adds the "js" class (CSS only hides animated items when JS works)
+     2) applies the saved theme, or the visitor's system preference on a first visit -->
+<script>
+  (function () {
+    var root = document.documentElement;
+    root.classList.add('js');
+    var theme = null;
+    try { theme = localStorage.getItem('theme'); } catch (e) {}
+    if (theme !== 'light' && theme !== 'dark') {
+      theme = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+    }
+    root.setAttribute('data-theme', theme);
+  })();
+</script>

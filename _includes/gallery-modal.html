@@ -1,0 +1,24 @@
+{%- comment -%}
+  The image pop-up (lightbox) shared by the Research and Work pages.
+  Include it ONCE at the bottom of a page:  {% include gallery-modal.html %}
+  Behavior lives in Assets/js/gallery.js. Any element like
+      <div class="thumb-grid" data-gallery data-gallery-title="My project"> … <button class="thumb"><img …></button> … </div>
+  opens this modal with all its images.
+{%- endcomment -%}
+<div class="modal-overlay" id="galleryModal" role="dialog" aria-modal="true" aria-labelledby="galleryModalTitle" aria-hidden="true">
+  <div class="modal">
+    <div class="modal-header">
+      <h2 class="modal-title" id="galleryModalTitle">Images</h2>
+      <button type="button" class="modal-close" id="galleryClose" aria-label="Close image viewer">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="modal-carousel">
+      <div class="modal-slides" id="galleryModalSlides"></div>
+      <button type="button" class="modal-arrow prev" id="galleryPrev" aria-label="Previous image">&#10094;</button>
+      <button type="button" class="modal-arrow next" id="galleryNext" aria-label="Next image">&#10095;</button>
+      <div class="modal-dots" id="galleryModalDots"></div>
+    </div>
+    <p class="sr-only" id="galleryStatus" role="status" aria-live="polite"></p>
+  </div>
+</div>

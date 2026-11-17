@@ -1,278 +1,131 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Background - Mohammad Ramjan Hossain</title>
-<link rel="icon" href="Assets/Logo/fyz_profile.jpg" type="image/png">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;1,6..12,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
-<!-- NAV -->
-<nav id="mainNav">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-brand">
-      <div class="nav-brand-text"><span>M. R.</span> Hossain</div>
-    </a>
-    <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="background.html" class="active">Background</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="publications.html">Publications</a></li>
-      <li><a href="work.html">Work</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </div>
-</nav>
+---
+title: "Background | Mohammad Ramjan Hossain"
+description: "Education, industrial training and courses of Mohammad Ramjan Hossain: B.Sc. in Mechanical Engineering from SUST, with training in steel manufacturing, gas processing and smart manufacturing."
+permalink: /background/
+---
+<style>.tl-body,.proj-body{display:block !important}</style>
+{%- comment -%}
+  BACKGROUND PAGE. Edit _data/background.yml to change anything here.
+{%- endcomment -%}
+{%- assign b = site.data.background -%}
 
 <!-- ═══ EDUCATION ═══ -->
 <section>
   <div class="container">
     <div class="sec-header-first">
-      <div class="sec-label">Education</div>
+      <h1 class="sec-label">Education</h1>
       <div class="sec-divider"></div>
-      <!-- <h2>Education</h2> -->
     </div>
+
     <div class="timeline">
-      <div class="tl-item anim" id="tl-1">
+      {%- for edu in b.education %}
+      <div class="tl-item anim" id="edu-{{ forloop.index }}">
         <div class="tl-card">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem;">
-            <div style="flex: 1;">
-              <div class="tl-year">2020 — 2025</div>
-              <h3>Bachelor of Science (Engineering) in Mechanical Engineering</h3>
-              <div class="inst"><img src="Assets/Logo/SUST logo.png" alt="SUST">Shahjalal University of Science and Technology, Sylhet-3114, Bangladesh</div>
-              <span class="gpa-tag">CGPA: 3.45 / 4.00</span>
+          <div class="tl-head" style="cursor:default">
+            <div class="tl-head-main">
+              <div class="tl-year">{{ edu.period }}</div>
+              <h2 style="font-size:1.15rem;font-family:var(--font-display);font-weight:600;margin-bottom:.2rem">{{ edu.degree }}</h2>
+              <div class="inst">
+                <img src="{{ edu.logo | relative_url }}" alt="" width="20" height="20">
+                {{ edu.institution }}
+              </div>
+              {%- if edu.cgpa %}
+              <span class="gpa-tag">{{ edu.grade_label | default: "CGPA" }}: {{ edu.cgpa }} / {{ edu.cgpa_scale }}</span>
+              {%- endif %}
             </div>
-            <button class="tl-toggle" onclick="toggleTl('tl-1')" style="border: none; background: none; cursor: pointer; padding: 0; flex-shrink: 0;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
           </div>
-          <div class="tl-body">
-            <p style="font-size: .85rem; color: var(--text-secondary); line-height: 1.8;text-align:justify;"><strong>Undergraduate Level Course:</strong> MEE176: Foundry and Welding Shops; MEE141: Programming Methodology; MEE178: Machine Shop Practice; MEE231: Basic Thermodynamics; MEE251: Engineering Mechanics; MEE245: Numerical Analysis; MEE253: Mechanics of Solids; MEE255: Engineering Materials(Metallic and Composites); MEE321 & MEE323: Fluid Mechanics I & II; MEE331 & MEE333: Heat Transfer I & II; MEE355 & MEE357: Machine Design I & II; MEE375: Machine Tools; MEE351: Mechanics of Machinery; MEE371: Production Processes; MEE367: Instrumentation and Measurement; MEE421: Fluid Machinery; MEE431: IC Engines; MEE435: Refrigeration and Buiding Mechanical System; MEE461: Control Engineering; MEE433: Power Plant Engineering; MEE441: Applied Engineering Mathamatics; MEE481: Automobile Engineering</p>
+          {%- if edu.coursework %}
+          <div class="tl-body" id="edu-body-{{ forloop.index }}">
+            <p><strong>{{ edu.coursework_label | default: "Coursework" }}:</strong> {{ edu.coursework }}</p>
           </div>
+          {%- endif %}
         </div>
       </div>
+      {%- endfor %}
     </div>
   </div>
 </section>
 
 <!-- ═══ TRAININGS ═══ -->
-<section class="sec-alt">
+{%- if b.trainings and b.trainings.size > 0 %}
+<section class="sec-alt" aria-labelledby="training-heading">
   <div class="container">
     <div class="sec-header">
-      <div class="sec-label">Trainings</div>
+      <h2 class="sec-label" id="training-heading">Trainings</h2>
       <div class="sec-divider"></div>
-      <!-- <h2>Training</h2> -->
     </div>
     <div class="training-list">
-      <!-- Training Item 1 -->
+      {%- for t in b.trainings %}
       <div class="train-item anim">
-        <div class="train-logo">
-          <img src="Assets/Logo/bsrm.png" alt="BSRML" style="width:100%; height:100%; object-fit:contain; padding:0px;">
-        </div>
-        <div class="train-date">10 Jan 2024<br>23 Jan 2024</div>
+        {%- if t.logo %}
+        <div class="train-logo"><img src="{{ t.logo | relative_url }}" alt="" width="36" height="36" loading="lazy"></div>
+        {%- endif %}
+        <div class="train-date">{% include date-lines.html value=t.period %}</div>
         <div>
-          <h4>Industrial Trainee</h4>
-          <h5>Bangladesh Steel Re-rolling Mills Ltd, Bangladesh</h5>
-          <p>Gained comprehensive knowledge of steel manufacturing, including furnace operations, rolling mills, and quality control.</p>
+          <h3 style="font-size:.92rem;font-weight:700;margin-bottom:.1rem;color:var(--text)">{{ t.title }}</h3>
+          <h4 style="font-size:.82rem;color:var(--text-2);font-weight:600">{{ t.org }}</h4>
+          <p>{{ t.text }}</p>
         </div>
       </div>
-
-      <!-- Training Item 2 -->
-      <div class="train-item anim">
-        <div class="train-logo">
-          <img src="Assets/Logo/Chevron_Logo.png" alt="Chevron" style="width:100%; height:100%; object-fit:contain; padding:0px;">
-        </div>
-        <div class="train-date">23 Aug 2023</div>
-        <div>
-          <h4>Industrial Trainee</h4>
-          <h5>Chevron, Bangladesh</h5>
-          <p>Observed and documented natural gas extraction and purification processes, from wellhead to national grid supply.</p>
-        </div>
-      </div>
-
-      <!-- Training Item 3 -->
-      <div class="train-item anim">
-        <div class="train-logo">
-          <img src="Assets/Logo/postal.jpg" alt="Postal Academy" style="width:100%; height:100%; object-fit:contain; padding:0px;">
-        </div>
-        <div class="train-date">01 Jan 2017<br>31 Mar 2017</div>
-        <div>
-          <h4>Diploma in Software Application</h4>
-          <h5>Postal Academy, Rajshahi, Bangladesh</h5>
-          <p>Gained insights of Microsoft Office Suite and Documentation.</p>
-        </div>
-      </div>
+      {%- endfor %}
     </div>
   </div>
 </section>
+{%- endif %}
 
 <!-- ═══ COURSES & WORKSHOPS ═══ -->
-<section>
+{%- if b.courses and b.courses.size > 0 %}
+{%- assign visible = b.courses_visible | default: 3 -%}
+<section aria-labelledby="courses-heading">
   <div class="container">
     <div class="sec-header">
-      <div class="sec-label">Additional Courses & Workshops</div>
+      <h2 class="sec-label" id="courses-heading">Additional Courses &amp; Workshops</h2>
       <div class="sec-divider"></div>
-      <!-- <h2>Additional Courses & Workshops</h2> -->
     </div>
+
     <div class="course-list" id="courseList">
-      <!-- Course Item 1 -->
+      {%- for c in b.courses %}
+      {%- if forloop.index <= visible %}
       <div class="course-item anim">
-        <div class="course-date">Sep 2025</div>
+      {%- else %}
+      <div class="course-item course-hidden">
+      {%- endif %}
+        <div class="course-date">{{ c.date }}</div>
         <div class="course-info">
-          <h4>Additive Manufacturing and 3D Printing using ANSYS Spaceclaim</h4>
-          <p class="course-company">Skill-Lync</p>
+          <h3 style="font-size:.92rem;font-weight:700;margin-bottom:.1rem;color:var(--text)">{{ c.title }}</h3>
+          <p class="course-company">{{ c.provider }}</p>
         </div>
       </div>
-
-      <!-- Course Item 2 -->
-      <div class="course-item anim">
-        <div class="course-date">Jan 2026</div>
-        <div class="course-info">
-          <h4>Industry 4.0 I: Foundations of Smart Manufacturing</h4>
-          <p class="course-company">Udemy</p>
-        </div>
-      </div>
-
-      <!-- Course Item 3 -->
-      <div class="course-item anim">
-        <div class="course-date">Aug 2025</div>
-        <div class="course-info">
-          <h4>Applied Deep Learning & Neural Network</h4>
-          <p class="course-company">EDUCBA</p>
-        </div>
-      </div>
-
-      <!-- Course Item 4 (Hidden) -->
-      <div class="course-item anim course-hidden">
-        <div class="course-date">Aug 2024</div>
-        <div class="course-info">
-          <h4>HVAC Duct Design with Software Application</h4>
-          <p class="course-company">ExpertEase Global</p>
-        </div>
-      </div>
-
-      <!-- Course Item 5 (Hidden) -->
-      <div class="course-item anim course-hidden">
-        <div class="course-date">Mar 2020</div>
-        <div class="course-info">
-          <h4>Pychamp 2020: A basic to advance workshop on python</h4>
-          <p class="course-company">RoboSUST</p>
-        </div>
-      </div>
-
-      <!-- Course Item 6 (Hidden) -->
-      <div class="course-item anim course-hidden">
-        <div class="course-date">Mar 2023</div>
-        <div class="course-info">
-          <h4>MATLAB Essentials</h4>
-          <p class="course-company">SolidProfessor</p>
-        </div>
-      </div>
-
-      <!-- Course Item 7 (Hidden) -->
-      <div class="course-item anim course-hidden">
-        <div class="course-date">Mar 2023</div>
-        <div class="course-info">
-          <h4>MATLAB Advanced Concepts</h4>
-          <p class="course-company">SolidProfessor</p>
-        </div>
-      </div>
-
-            <!-- Course Item 8 (Hidden) -->
-      <div class="course-item anim course-hidden">
-        <div class="course-date">May 2021</div>
-        <div class="course-info">
-          <h4>INTRODUCTION TO AUTODESK FUSION 360</h4>
-          <p class="course-company">INSPORE ENGINEERING BANGLADESH</p>
-        </div>
-      </div>
+      {%- endfor %}
     </div>
-    <div style="text-align: center; margin-top: 1.5rem;">
-      <button class="more-btn" onclick="toggleCourses()">Show all</button>
+
+    {%- if b.courses.size > visible %}
+    <div style="text-align:center;margin-top:1.5rem">
+      <button type="button" class="btn" data-courses-toggle data-target="courseList" data-more="Show all ({{ b.courses.size }})" data-less="Show less" aria-expanded="false" aria-controls="courseList">Show all ({{ b.courses.size }})</button>
+    </div>
+    {%- endif %}
+  </div>
+</section>
+{%- endif %}
+
+<!-- ═══ TECHNICAL SKILLS (turn on with show_skills: true in background.yml) ═══ -->
+{%- if b.show_skills and b.skills.size > 0 %}
+<section class="sec-alt" aria-labelledby="skills-heading">
+  <div class="container">
+    <div class="sec-header">
+      <h2 class="sec-label" id="skills-heading">Technical Skills</h2>
+      <div class="sec-divider"></div>
+    </div>
+    <div class="skills-grid">
+      {%- for g in b.skills %}
+      <div class="skill-group anim">
+        <h3>{{ g.group }}</h3>
+        <ul class="skill-tags">
+          {%- for item in g.items %}<li class="skill-tag">{{ item }}</li>{% endfor %}
+        </ul>
+      </div>
+      {%- endfor %}
     </div>
   </div>
 </section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-text"><em>Not knowing when the Dawn will come, I open every Door</em>  · <em>Emily Dickinson</em></div>
-    <div class="footer-social">
-      <!-- Email -->
-      <a href="mailto:foyez.mech@gmail.com" title="Email">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-      </a>
-
-      <!-- GitHub -->
-      <a href="https://github.com/foyeasy" target="_blank" title="GitHub">
-        <img src="Assets/Logo/github.svg" alt="GitHub" style="width:24px;height:24px;object-fit:contain;">
-      </a>
-
-
-      <!-- Google Scholar -->
-      <a href="https://scholar.google.com/citations?hl=en&user=oq6ybtwAAAAJ&view_op=list_works&gmla=AEk_c1sqfmYS1vi0kVjn9Scnpr8slrNfWEZk5zKQJgxBP-zMBrg4s6K71URTI6DAEUDcnvvOVb4WA1lULMxSlO0R" target="_blank" title="Google Scholar">
-        <img src="Assets/Logo/Google_Scholar_logo.png" alt="Google Scholar" style="width:24px;height:24px;object-fit:contain;">
-      </a>
-
-      <!-- ORCID -->
-      <a href="https://orcid.org/0009-0001-0022-8668" target="_blank" title="ORCID">
-        <img src="Assets/Logo/orcid.png" alt="ORCID" style="width:24px;height:24px;object-fit:contain;">
-      </a>
-
-      <!-- LinkedIn -->
-      <a href="https://www.linkedin.com/in/foyeasy/" target="_blank" title="LinkedIn">
-        <img src="Assets/Logo/linkedin.png" alt="LinkedIn" style="width:24px;height:24px;object-fit:contain;">
-      </a>
-
-    </div>  
-  </div>
-</footer>
-
-
-<!-- Back to top -->
-<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
-
-<script>
-// Scroll animations
-const obs = new IntersectionObserver(entries => {
-  entries.forEach((e, i) => {
-    if (e.isIntersecting) { e.target.classList.add('visible'); }
-  });
-}, { threshold: 0.06, rootMargin: '0px 0px -40px 0px' });
-
-document.querySelectorAll('.anim').forEach((el, i) => {
-  el.style.transitionDelay = (i % 6) * 0.06 + 's';
-  obs.observe(el);
-});
-
-// Nav scroll effect + back to top
-window.addEventListener('scroll', () => {
-  document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 15);
-  document.getElementById('btt').classList.toggle('show', window.scrollY > 600);
-});
-
-// Close mobile menu on link click
-document.querySelectorAll('.nav-links a').forEach(a => {
-  a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
-});
-
-// Toggle courses visibility
-function toggleCourses() {
-  const courseList = document.getElementById('courseList');
-  const btn = event.target;
-  courseList.classList.toggle('expanded');
-  btn.classList.toggle('expanded');
-  btn.textContent = courseList.classList.contains('expanded') ? 'Show Less' : 'View More Courses';
-}
-
-// Toggle down education timeline for details
-function toggleTl(id) {
-  document.getElementById(id).classList.toggle('open');
-}
-</script>
-</body>
-</html>
+{%- endif %}

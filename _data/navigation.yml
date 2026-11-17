@@ -1,0 +1,17 @@
+# ─────────────────────────────────────────────
+# navigation.yml: the page links used by BOTH the navbar and the footer.
+# Add, remove or rename a page here and both update.
+# `url` must match the `permalink` in that page's front matter.
+# ─────────────────────────────────────────────
+- title: "Home"
+  url: /
+- title: "Background"
+  url: /background/
+- title: "Research"
+  url: /research/
+- title: "Publications"
+  url: /publications/
+- title: "Work"
+  url: /work/
+- title: "Contact"
+  url: /contact/

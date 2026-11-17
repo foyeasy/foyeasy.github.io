@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+  {% include head.html %}
+</head>
+<body{% if page.body_class %} class="{{ page.body_class }}"{% endif %}>
+
+  {% include navbar.html %}
+
+  <main id="main" tabindex="-1">
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
+
+  <!-- Site-wide behavior: theme toggle, mobile menu, animations, accordions -->
+  <script src="{{ '/Assets/js/main.js' | relative_url }}" defer></script>
+
+  {%- comment -%}
+    Page-specific scripts. In a page's front matter write, for example:
+      scripts: [carousel, publications]
+    and Assets/js/carousel.js + Assets/js/publications.js load on that page only.
+    They run after main.js (defer keeps the order).
+  {%- endcomment -%}
+  {%- for name in page.scripts %}
+  <script src="{{ '/Assets/js/' | append: name | append: '.js' | relative_url }}" defer></script>
+  {%- endfor %}
+
+</body>
+</html>

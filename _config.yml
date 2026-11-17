@@ -1,0 +1,71 @@
+# ─────────────────────────────────────────────
+# Site settings: foyeasy.github.io
+# ─────────────────────────────────────────────
+title: "Mohammad Ramjan Hossain"
+description: "Graduate mechanical engineer working on additive manufacturing, materials characterization and thermal management in advanced machining. Open to Masters/PhD opportunities."
+lang: en
+url: "https://foyeasy.github.io"
+baseurl: ""            # keep empty for a user site (foyeasy.github.io)
+
+# Social preview image (used by jekyll-seo-tag for og:image / twitter:image)
+# Create a 1200x630 image and place it at this path.
+image: /Assets/social-preview.png
+
+author:
+  name: "Mohammad Ramjan Hossain"
+  email: "foyez.mech@gmail.com"
+
+# Used by jekyll-seo-tag
+twitter:
+  card: summary_large_image
+social:
+  name: "Mohammad Ramjan Hossain"
+  links:
+    - https://github.com/foyeasy
+    - https://www.linkedin.com/in/foyeasy/
+    - https://orcid.org/0009-0001-0022-8668
+
+# ─────────────────────────────────────────────
+# Build settings (GitHub Pages compatible)
+# ─────────────────────────────────────────────
+markdown: kramdown
+permalink: pretty
+
+# Only plugins that GitHub Pages supports out of the box
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Files Jekyll should NOT publish
+exclude:
+  - README.md
+  - tools
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache
+  - .jekyll-cache
+
+# Files that must be published even though they start with _ or .
+include:
+  - _headers
+
+# Defaults: every page gets the "default" layout unless it says otherwise
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# ─────────────────────────────────────────────
+# Custom settings used by our templates
+# ─────────────────────────────────────────────
+home:
+  news_count: 3          # how many news items to show on the home page
+
+cv_file: /Assets/CV_Mohammad_Ramjan_Hossain.pdf   # put your CV PDF here
+
+# Contact form (Web3Forms). Get a free access key at https://web3forms.com
+# The key is safe to expose in public HTML; it only allows sending to your email.
+web3forms_key: "YOUR_WEB3FORMS_ACCESS_KEY"
