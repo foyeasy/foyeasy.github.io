@@ -89,15 +89,7 @@
     });
   }
 
-  // If the visitor never chose, follow their system setting live.
-  if (window.matchMedia) {
-    var mq = window.matchMedia('(prefers-color-scheme: dark)');
-    var onSystemChange = function (e) {
-      if (!load('theme')) applyTheme(e.matches ? 'dark' : 'light', false);
-    };
-    if (mq.addEventListener) mq.addEventListener('change', onSystemChange);
-    else if (mq.addListener) mq.addListener(onSystemChange);
-  }
+  // First visit always starts in light mode; the toggle still lets visitors switch and remembers it.
 
   /* ───────── mobile menu ───────── */
   var navToggle = $('#navToggle');

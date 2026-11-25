@@ -43,7 +43,7 @@
     var theme = null;
     try { theme = localStorage.getItem('theme'); } catch (e) {}
     if (theme !== 'light' && theme !== 'dark') {
-      theme = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+      theme = 'light'; // first visit always starts light (ignores the visitor's system dark mode)
     }
     root.setAttribute('data-theme', theme);
   })();

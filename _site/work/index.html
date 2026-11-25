@@ -43,7 +43,7 @@
     var theme = null;
     try { theme = localStorage.getItem('theme'); } catch (e) {}
     if (theme !== 'light' && theme !== 'dark') {
-      theme = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+      theme = 'light'; // first visit always starts light (ignores the visitor's system dark mode)
     }
     root.setAttribute('data-theme', theme);
   })();
@@ -110,7 +110,7 @@
           <h3 style="font-size:.95rem;font-weight:700;color:var(--text)">Technical Consultant</h3>
           <h4 style="font-size:.84rem;color:var(--text-2);font-weight:600">Government Agency <em>(name withheld under NDA)</em></h4>
           <ul class="bullets">
-            <li><span>Provided 25+ end-to-end design consulting, covering concept development, detailed modeling and documentation.</span></li>
+            <li><span>Provided end-to-end design consulting, covering concept development, detailed modeling and documentation.</span></li>
             <li><span>Translated limited inputs (reference images, verbal explanations, early-stage ideas) into accurate, manufacturable CAD designs.</span></li>
             <li><span>Performed computational fluid dynamics (CFD) simulations of two-component species mixing in ANSYS and COMSOL, modeling flow behavior, species transport and mixing uniformity.</span></li>
             <li><span>Maintained strict confidentiality and secure handling of sensitive design data throughout engagements.</span></li>
@@ -130,10 +130,32 @@
     </div>
 
     <div class="proj-list">
-      <div class="proj-item" id="proj-am-qc">
+      <div class="proj-item" id="proj-lpbf-thermal">
         <h3 style="margin:0;font-size:1rem">
           <div class="proj-header">
             <span class="proj-num" aria-hidden="true">i</span>
+            <span class="proj-main"><span class="proj-title">Laser Powder Bed Fusion Thermal Modeling</span></span>
+            <span class="proj-tags"><span class="proj-tag">COMSOL Multiphysics</span><span class="proj-tag">Heat Transfer</span><span class="proj-tag">Ti-6Al-4V</span>
+            </span>
+          </div>
+        </h3>
+
+        <div class="proj-body" id="proj-body-lpbf-thermal">
+          <p class="proj-desc-full">Built a transient heat-transfer model in COMSOL Multiphysics of a single laser scan track on a Ti-6Al-4V powder bed. A moving Gaussian laser source (200 W, 0.8 m/s, 50 µm beam radius, 0.4 absorptivity) is applied on the top surface, with temperature-dependent material properties, surface radiation and fixed-temperature boundaries on the remaining faces.</p>
+          <div class="thumb-grid" data-gallery data-gallery-title="Laser Powder Bed Fusion Thermal Modeling">
+            <button type="button" class="thumb" aria-haspopup="dialog">
+              <img src="/Assets/Projects/LPBF01.gif" alt="Laser Powder Bed Fusion: simulation results" loading="lazy">
+            </button>
+            <button type="button" class="thumb" aria-haspopup="dialog">
+              <img src="/Assets/Projects/LPBF02.png" alt="Laser Powder Bed Fusion: mesh" loading="lazy">
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="proj-item" id="proj-am-qc">
+        <h3 style="margin:0;font-size:1rem">
+          <div class="proj-header">
+            <span class="proj-num" aria-hidden="true">ii</span>
             <span class="proj-main"><span class="proj-title">Predictive ML Framework for AM Quality Control</span></span>
             <span class="proj-tags"><span class="proj-tag">Gradient Boosting</span><span class="proj-tag">SMOTE</span><span class="proj-tag">SHAP</span>
             </span>
@@ -168,7 +190,7 @@
       <div class="proj-item" id="proj-sonar-slam">
         <h3 style="margin:0;font-size:1rem">
           <div class="proj-header">
-            <span class="proj-num" aria-hidden="true">ii</span>
+            <span class="proj-num" aria-hidden="true">iii</span>
             <span class="proj-main"><span class="proj-title">Sonar SLAM (Simultaneous Localization And Mapping)</span></span>
             <span class="proj-tags"><span class="proj-tag">ROS2</span><span class="proj-tag">RViz2</span><span class="proj-tag">Gazebo</span>
             </span>
@@ -193,7 +215,7 @@
       <div class="proj-item" id="proj-rough-terrain">
         <h3 style="margin:0;font-size:1rem">
           <div class="proj-header">
-            <span class="proj-num" aria-hidden="true">iii</span>
+            <span class="proj-num" aria-hidden="true">iv</span>
             <span class="proj-main"><span class="proj-title">Autonomous Rough Terrain Robot</span></span>
             <span class="proj-tags"><span class="proj-tag">ROS2</span><span class="proj-tag">RViz2</span><span class="proj-tag">Gazebo</span>
             </span>
@@ -215,7 +237,7 @@
       <div class="proj-item" id="proj-covid-dhaka">
         <h3 style="margin:0;font-size:1rem">
           <div class="proj-header">
-            <span class="proj-num" aria-hidden="true">iv</span>
+            <span class="proj-num" aria-hidden="true">v</span>
             <span class="proj-main"><span class="proj-title">Spread of COVID-19 in Dhaka City</span></span>
             <span class="proj-tags"><span class="proj-tag">MATLAB</span><span class="proj-tag">ODE</span>
             </span>
@@ -234,7 +256,7 @@
       <div class="proj-item" id="proj-cad">
         <h3 style="margin:0;font-size:1rem">
           <div class="proj-header">
-            <span class="proj-num" aria-hidden="true">v</span>
+            <span class="proj-num" aria-hidden="true">vi</span>
             <span class="proj-main"><span class="proj-title">CAD Projects</span></span>
             <span class="proj-tags"><span class="proj-tag">SolidWorks</span><span class="proj-tag">Fusion360</span><span class="proj-tag">Keyshot</span>
             </span>
