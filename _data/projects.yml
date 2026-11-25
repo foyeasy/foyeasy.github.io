@@ -63,6 +63,14 @@ experience:
 # images: list of {src, alt}. A project with no `description` and no `highlights`
 # (like CAD Projects) simply shows its image gallery.
 projects:
+  - id: lpbf-thermal
+    title: "Laser Powder Bed Fusion Thermal Modeling"
+    tags: [COMSOL Multiphysics, Heat Transfer, Ti-6Al-4V]
+    description: >-
+      Built a transient heat-transfer model in COMSOL Multiphysics of a single laser scan track on a Ti-6Al-4V powder bed. A moving Gaussian laser source (200 W, 0.8 m/s, 50 µm beam radius, 0.4 absorptivity) is applied on the top surface, with temperature-dependent material properties, surface radiation and fixed-temperature boundaries on the remaining faces.
+    images:
+      - { src: /Assets/Projects/LPBF01.gif, alt: "Laser Powder Bed Fusion: simulation results" }
+      - { src: /Assets/Projects/LPBF02.png, alt: "Laser Powder Bed Fusion: mesh" }
   - id: am-qc
     title: "Predictive ML Framework for AM Quality Control"
     tags: [Gradient Boosting, SMOTE, SHAP]
